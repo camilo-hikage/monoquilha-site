@@ -1,3 +1,40 @@
+// ---------- alternância de tema (Original / Praia) ----------
+(function () {
+  const KEY = "monoquilha-theme";
+  const root = document.documentElement;
+  const toggles = document.querySelectorAll("[data-theme-toggle]");
+  if (!toggles.length) return;
+
+  function apply(theme, animate) {
+    if (animate) {
+      root.classList.add("theme-transition");
+      window.setTimeout(() => root.classList.remove("theme-transition"), 500);
+    }
+    if (theme === "praia") {
+      root.setAttribute("data-theme", "praia");
+    } else {
+      root.removeAttribute("data-theme");
+    }
+    toggles.forEach((btn) => btn.setAttribute("aria-pressed", String(theme === "praia")));
+  }
+
+  let saved = null;
+  try {
+    saved = localStorage.getItem(KEY);
+  } catch (e) {}
+  apply(saved === "praia" ? "praia" : "original", false);
+
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "praia" ? "original" : "praia";
+      apply(next, true);
+      try {
+        localStorage.setItem(KEY, next);
+      } catch (e) {}
+    });
+  });
+})();
+
 // ---------- header: sombra ao rolar ----------
 const header = document.getElementById("header");
 const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 20);

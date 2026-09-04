@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("monoquilha-theme") === "praia") {
+          document.documentElement.setAttribute("data-theme", "praia");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <title>Monoquilha Bar n' Brunch — Itaguá Waterfront, Ubatuba</title>
   <meta name="description" content="Cosmopolitan brunch with surf soul and a craft cocktail bar, right on the waterfront in Itaguá, Ubatuba, Brazil." />
   <link rel="alternate" hreflang="pt-BR" href="https://camilo-hikage.github.io/monoquilha-site/" />
@@ -36,6 +45,11 @@
           </svg>
         </a>
       </div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle between the Original theme and the Beach theme">
+        <span class="theme-toggle-thumb" aria-hidden="true"></span>
+        <span class="theme-toggle-option">🌑 Original</span>
+        <span class="theme-toggle-option">🌊 Beach</span>
+      </button>
       <a href="https://www.ifood.com.br/delivery/ubatuba-sp/monoquilha-bar-n-brunch-barra-da-lagoa/eabce545-0540-4869-bd5b-27e5ad5f8ed8" class="topbar-cta" target="_blank" rel="noreferrer">Order on iFood</a>
     </div>
   </div>

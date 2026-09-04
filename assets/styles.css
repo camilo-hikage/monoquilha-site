@@ -22,8 +22,66 @@
   --coral-2: #c14f2a;
   --sun: #e3a23b;
 
+  /* elementos que ficam sobre o vídeo do hero — sempre claros,
+     independem do tema (o scrim escuro garante legibilidade) */
+  --hero-text: #f7f1e4;
+  --hero-text-dim: rgba(247, 241, 228, 0.78);
+  --hero-line: rgba(255, 255, 255, 0.35);
+
+  --header-grad-a: rgba(58, 38, 22, 0.94);
+  --header-grad-b: rgba(30, 19, 10, 0.94);
+  --header-grad-a-scrolled: rgba(46, 30, 17, 0.98);
+  --header-grad-b-scrolled: rgba(24, 15, 8, 0.98);
+  --header-border: rgba(227, 162, 59, 0.22);
+
+  --hero-scrim-a: rgba(11, 21, 18, 0.15);
+  --hero-scrim-b: rgba(11, 21, 18, 0.05);
+  --hero-scrim-c: rgba(11, 21, 18, 0.9);
+
+  --map-filter: grayscale(0.3) invert(0.92) contrast(0.88);
+
   --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ============================================================
+   TEMA "PRAIA" — camada clara e praiana, alternável em runtime
+   (identidade original preservada e mantida como padrão)
+   ============================================================ */
+[data-theme="praia"] {
+  --bg: #faf5ea;
+  --bg-2: #f2e9d6;
+  --panel: #eaf1ee;
+  --cream: #1c2b2c;
+  --cream-dim: #33453f;
+  --ink-soft: #5b6d66;
+
+  --line: rgba(28, 43, 44, 0.12);
+  --line-strong: rgba(28, 43, 44, 0.22);
+
+  --coral: #2f9e97;
+  --coral-2: #24847e;
+  --sun: #e0a340;
+
+  --header-grad-a: rgba(250, 245, 234, 0.94);
+  --header-grad-b: rgba(238, 227, 205, 0.94);
+  --header-grad-a-scrolled: rgba(255, 251, 244, 0.98);
+  --header-grad-b-scrolled: rgba(242, 232, 210, 0.98);
+  --header-border: rgba(47, 158, 151, 0.25);
+
+  --hero-scrim-a: rgba(15, 40, 40, 0.12);
+  --hero-scrim-b: rgba(15, 40, 40, 0.04);
+  --hero-scrim-c: rgba(13, 32, 32, 0.86);
+
+  --map-filter: sepia(0.12) saturate(1.08) brightness(1.02);
+}
+
+/* transição suave entre temas — ligada só durante a troca,
+   pra não deixar hover/scroll do dia a dia mais lentos */
+html.theme-transition,
+html.theme-transition * {
+  transition: background-color 0.45s ease, color 0.45s ease,
+    border-color 0.45s ease, fill 0.45s ease, opacity 0.45s ease !important;
 }
 
 * {
@@ -162,6 +220,64 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
+/* ---------- alternância de tema (Original / Praia) ---------- */
+.theme-toggle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  flex: 0 0 auto;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.theme-toggle:hover {
+  border-color: var(--coral);
+}
+.theme-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 999px;
+  background: var(--coral);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+}
+.theme-toggle[aria-pressed="true"] .theme-toggle-thumb {
+  transform: translateX(100%);
+}
+.theme-toggle-option {
+  position: relative;
+  z-index: 1;
+  padding: 0.32rem 0.6rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+.theme-toggle[aria-pressed="false"] .theme-toggle-option:first-child,
+.theme-toggle[aria-pressed="true"] .theme-toggle-option:last-child {
+  color: #1a0d05;
+  font-weight: 700;
+}
+@media (max-width: 520px) {
+  .theme-toggle {
+    font-size: 0.58rem;
+  }
+  .theme-toggle-option {
+    padding: 0.3rem 0.4rem;
+  }
+}
+
 /* ============================================================
    HEADER
    ============================================================ */
@@ -169,17 +285,17 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  /* fachada de madeira, como a placa do logo */
+  /* fachada de madeira, como a placa do logo (vira areia clara no tema Praia) */
   background:
-    linear-gradient(180deg, rgba(58, 38, 22, 0.94), rgba(30, 19, 10, 0.94));
-  border-bottom: 1px solid rgba(227, 162, 59, 0.22);
+    linear-gradient(180deg, var(--header-grad-a), var(--header-grad-b));
+  border-bottom: 1px solid var(--header-border);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .site-header.scrolled {
   background:
-    linear-gradient(180deg, rgba(46, 30, 17, 0.98), rgba(24, 15, 8, 0.98));
+    linear-gradient(180deg, var(--header-grad-a-scrolled), var(--header-grad-b-scrolled));
   box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.5);
 }
 .header-inner {
@@ -308,7 +424,7 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11, 21, 18, 0.15) 0%, rgba(11, 21, 18, 0.05) 55%, rgba(11, 21, 18, 0.9) 100%);
+  background: linear-gradient(180deg, var(--hero-scrim-a) 0%, var(--hero-scrim-b) 55%, var(--hero-scrim-c) 100%);
 }
 .hero-phrase {
   position: absolute;
@@ -331,7 +447,7 @@ h1, h2, h3 {
 }
 .hero-phrase h1 {
   font-size: clamp(1.7rem, 4vw, 2.6rem);
-  color: var(--cream);
+  color: var(--hero-text);
 }
 .hero-caption {
   position: absolute;
@@ -343,7 +459,7 @@ h1, h2, h3 {
   font-size: 0.68rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--cream-dim);
+  color: var(--hero-text-dim);
 }
 .hero-dots {
   position: absolute;
@@ -357,7 +473,7 @@ h1, h2, h3 {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--hero-line);
   background: transparent;
   padding: 0;
   cursor: pointer;
@@ -771,7 +887,7 @@ h1, h2, h3 {
   width: 100%;
   aspect-ratio: 4 / 3;
   display: block;
-  filter: grayscale(0.3) invert(0.92) contrast(0.88);
+  filter: var(--map-filter);
 }
 
 /* ============================================================
@@ -886,6 +1002,11 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .topbar-social {
     display: none;
+  }
+  .topbar-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
   }
 
   .header-inner {
