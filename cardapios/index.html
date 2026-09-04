@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=6, user-scalable=yes, viewport-fit=cover">
 <title>Cardápio Monoquilha</title>
+</head>
+<body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
 <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 <style>
@@ -15,9 +22,11 @@
 
   *{box-sizing:border-box;}
 
+  html{ height:100%; }
   body{
     margin:0;
     min-height:100vh;
+    min-height:100dvh;
     background:
       radial-gradient(120% 70% at 50% -10%, #16273d 0%, transparent 60%),
       radial-gradient(160% 100% at 50% 115%, #000000 0%, transparent 55%),
@@ -48,31 +57,32 @@
     display:flex;
     flex-direction:column;
     min-height:100vh;
-    padding: max(14px, env(safe-area-inset-top)) 12px max(14px, env(safe-area-inset-bottom));
+    min-height:100dvh;
+    padding: max(10px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
     position:relative;
     z-index:1;
   }
 
   header{
     text-align:center;
-    padding:2px 0 10px;
+    padding:0 0 4px;
     flex-shrink:0;
   }
   .kicker{
     font-family:"Inter",sans-serif;
-    font-size:11px;
-    letter-spacing:.22em;
+    font-size:10px;
+    letter-spacing:.2em;
     text-transform:uppercase;
     color:var(--muted);
     font-weight:600;
   }
   .kicker b{ color:var(--accent); font-weight:600; }
   header h1{
-    margin:4px 0 0;
+    margin:2px 0 0;
     font-family:"Fraunces", Georgia, serif;
     font-style:italic;
     font-weight:500;
-    font-size:clamp(20px,5.5vw,26px);
+    font-size:clamp(17px,5vw,24px);
     color:var(--cream);
     text-wrap:balance;
   }
@@ -84,11 +94,13 @@
     justify-content:center;
     position:relative;
     min-height:0;
+    /* let the book claim the whole scrollable width up to the touch chevrons */
+    padding:0 34px;
   }
 
   .book-frame{
     position:relative;
-    width:min(90vw, 420px, calc(65vh * 0.7071));
+    width:min(100%, calc(88vh * 0.7071), calc(92dvh * 0.7071));
     perspective: 2400px;
   }
 
@@ -285,10 +297,10 @@
     width: 400,
     height: 566,
     size: "stretch",
-    minWidth: 260,
-    maxWidth: 480,
-    minHeight: 368,
-    maxHeight: 680,
+    minWidth: 320,
+    maxWidth: 560,
+    minHeight: 452,
+    maxHeight: 792,
     showCover: true,
     usePortrait: true,
     maxShadowOpacity: 0.55,
@@ -331,3 +343,6 @@
   updateUI(0);
 })();
 </script>
+
+</body>
+</html>
