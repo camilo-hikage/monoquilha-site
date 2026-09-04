@@ -122,6 +122,9 @@
     opacity:0;
     transform:scale(.94) translateY(6px);
     animation: riseIn .7s cubic-bezier(.2,.8,.2,1) .15s forwards;
+    /* allow the browser's native pinch-to-zoom over the book; only claim
+       vertical panning for our own drag-to-flip gesture */
+    touch-action: pan-y pinch-zoom;
   }
   /* required page-flip library styles (not shipped in the CDN JS bundle):
      the library sizes #book itself via inline styles (autoSize), and grows
@@ -304,7 +307,7 @@
     showCover: true,
     usePortrait: true,
     maxShadowOpacity: 0.55,
-    mobileScrollSupport: false,
+    mobileScrollSupport: true,
     useMouseEvents: true,
     swipeDistance: 20,
     flippingTime: 700,
