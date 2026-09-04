@@ -446,6 +446,12 @@ h1, h2, h3 {
 }
 .split-media {
   min-height: 460px;
+  overflow: hidden;
+}
+.split-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .split-copy {
   padding: 5rem 4rem;
@@ -622,6 +628,12 @@ h1, h2, h3 {
 }
 .rec-media {
   aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.rec-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ============================================================
@@ -772,6 +784,16 @@ h1, h2, h3 {
 .insta-item {
   aspect-ratio: 1 / 1;
   display: block;
+  overflow: hidden;
+}
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.insta-item:hover img {
+  transform: scale(1.06);
 }
 .insta-item.ph::after {
   font-size: 0.56rem;
