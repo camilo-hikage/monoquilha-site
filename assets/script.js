@@ -50,6 +50,46 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 // ---------- ano no rodapé ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---------- carrossel do hero (vídeos + frases) ----------
+(function () {
+  const hero = document.getElementById("heroCarousel");
+  if (!hero) return;
+  const slides = [...hero.querySelectorAll(".hero-slide")];
+  const phrases = [...hero.querySelectorAll(".hero-phrase")];
+  const dots = [...hero.querySelectorAll(".hero-dots button")];
+  const videos = slides.map((s) => s.querySelector("video"));
+  let idx = 0;
+  let timer;
+
+  function show(i, userAction) {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
+    phrases.forEach((p, n) => p.classList.toggle("is-active", n === idx));
+    dots.forEach((d, n) => d.setAttribute("aria-selected", String(n === idx)));
+
+    const v = videos[idx];
+    if (v) {
+      if (v.paused) v.play().catch(() => {});
+      if (!v.hasAttribute("data-loaded")) {
+        v.setAttribute("preload", "auto");
+        v.setAttribute("data-loaded", "1");
+      }
+    }
+    if (userAction) restart();
+  }
+
+  function restart() {
+    clearInterval(timer);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    timer = setInterval(() => show(idx + 1), 8000);
+  }
+
+  dots.forEach((d, i) => d.addEventListener("click", () => show(i, true)));
+
+  show(0, false);
+  restart();
+})();
+
 // ---------- slider de depoimentos ----------
 (function () {
   const slider = document.getElementById("testiSlider");
