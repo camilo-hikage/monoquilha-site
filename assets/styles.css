@@ -169,14 +169,18 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  /* fachada de madeira, como a placa do logo */
+  background:
+    linear-gradient(180deg, rgba(58, 38, 22, 0.94), rgba(30, 19, 10, 0.94));
+  border-bottom: 1px solid rgba(227, 162, 59, 0.22);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .site-header.scrolled {
-  background: rgba(11, 21, 18, 0.96);
-  border-color: var(--line);
-  backdrop-filter: blur(6px);
+  background:
+    linear-gradient(180deg, rgba(46, 30, 17, 0.98), rgba(24, 15, 8, 0.98));
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.5);
 }
 .header-inner {
   max-width: 1240px;
@@ -215,8 +219,15 @@ h1, h2, h3 {
   color: var(--cream);
 }
 
-.brand {
+.brand-wrap {
   justify-self: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.brand {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
 }
@@ -232,6 +243,84 @@ h1, h2, h3 {
 .site-header.scrolled .brand-logo {
   width: 58px;
   height: 58px;
+}
+
+/* ---------- folhagem ao redor do logo (fachada) ---------- */
+.foliage {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 60px;
+  height: 70px;
+  margin-top: -35px;
+  pointer-events: none;
+  transform-origin: 50% 15%;
+  animation: vine-drift 7s ease-in-out infinite;
+}
+.foliage-left {
+  right: calc(50% + 18px);
+}
+.foliage-right {
+  left: calc(50% + 18px);
+  animation-delay: 0.6s;
+}
+.site-header.scrolled .foliage {
+  width: 46px;
+  height: 54px;
+  margin-top: -27px;
+}
+.site-header.scrolled .foliage-left {
+  right: calc(50% + 12px);
+}
+.site-header.scrolled .foliage-right {
+  left: calc(50% + 12px);
+}
+.vine {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.leaf {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: calc(20px * var(--s, 1));
+  height: calc(13px * var(--s, 1));
+  background: linear-gradient(135deg, #6a9a5b, #2f5127);
+  border-radius: 0 85% 0 85%;
+  box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+  transform-origin: 0% 100%;
+  animation: leaf-sway var(--dur, 5s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes leaf-sway {
+  0%, 100% { transform: translate(var(--x), var(--y)) rotate(calc(var(--r) - 5deg)); }
+  50% { transform: translate(var(--x), calc(var(--y) - 2px)) rotate(calc(var(--r) + 4deg)); }
+}
+@keyframes vine-drift {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foliage,
+  .leaf {
+    animation: none !important;
+  }
+}
+@media (max-width: 520px) {
+  .foliage {
+    width: 42px;
+    height: 52px;
+    margin-top: -26px;
+  }
+  .foliage-left {
+    right: calc(50% + 6px);
+  }
+  .foliage-right {
+    left: calc(50% + 6px);
+  }
 }
 
 .nav-toggle {
