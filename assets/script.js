@@ -100,9 +100,10 @@ document.getElementById("year").textContent = new Date().getFullYear();
   if (idx < 0) idx = 0;
   let timer;
 
+  const dotLabel = slider.dataset.dotLabel || "Depoimento";
   items.forEach((_, i) => {
     const dot = document.createElement("button");
-    dot.setAttribute("aria-label", "Depoimento " + (i + 1));
+    dot.setAttribute("aria-label", dotLabel + " " + (i + 1));
     dot.addEventListener("click", () => show(i, true));
     dotsWrap.appendChild(dot);
   });

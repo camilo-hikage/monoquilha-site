@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monoquilha Bar n' Brunch — Itaguá Waterfront, Ubatuba</title>
+  <meta name="description" content="Cosmopolitan brunch with surf soul and a craft cocktail bar, right on the waterfront in Itaguá, Ubatuba, Brazil." />
+  <link rel="alternate" hreflang="pt-BR" href="https://camilo-hikage.github.io/monoquilha-site/" />
+  <link rel="alternate" hreflang="en" href="https://camilo-hikage.github.io/monoquilha-site/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://camilo-hikage.github.io/monoquilha-site/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="tel:+5512991828250">+55 (12) 99182-8250</a>
+      <div class="topbar-social" aria-label="Social media">
+        <a href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/p/Monoquilha-Bar-n-Brunch-61554758878935/" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7v2.1H9.3v2.8h2.4V21h2.8z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      <a href="https://www.ifood.com.br/delivery/ubatuba-sp/monoquilha-bar-n-brunch-barra-da-lagoa/eabce545-0540-4869-bd5b-27e5ad5f8ed8" class="topbar-cta" target="_blank" rel="noreferrer">Order on iFood</a>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <nav class="nav nav-left" aria-label="Main">
+        <a href="#top">Home</a>
+        <a href="#sobre">About</a>
+        <a href="#menu">Menu</a>
+      </nav>
+
+      <a href="#top" class="brand" aria-label="Monoquilha — home">
+        <img class="brand-logo" src="../assets/logo.png" alt="Monoquilha Bar &amp; Brunch" width="320" height="320" />
+      </a>
+
+      <nav class="nav nav-right" aria-label="Actions">
+        <a href="#depoimentos">Reviews</a>
+        <a href="#contato">Contact</a>
+        <a href="../index.html" class="lang-switch" hreflang="pt-BR" aria-label="Mudar para português">PT</a>
+        <a href="https://wa.me/5512991828250" class="btn btn-ghost" target="_blank" rel="noreferrer">Reserve</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO (carousel) ============ -->
+    <section class="hero" id="heroCarousel">
+      <div class="hero-slide is-active">
+        <video
+          class="hero-bg"
+          src="../assets/video/orla.mp4"
+          poster="../assets/video/orla-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+      </div>
+      <div class="hero-slide">
+        <video
+          class="hero-bg"
+          src="../assets/video/pancake.mp4"
+          poster="../assets/video/pancake-poster.jpg"
+          muted
+          loop
+          playsinline
+          preload="none"
+          aria-hidden="true"
+        ></video>
+      </div>
+
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-phrase is-active">
+        <p class="eyebrow">Ubatuba · Itaguá Waterfront</p>
+        <h1>A brunch right<br />by the sea</h1>
+      </div>
+      <div class="hero-phrase">
+        <p class="eyebrow">Signature menu</p>
+        <h1>Flavors you<br />won't forget</h1>
+      </div>
+
+      <div class="hero-caption">
+        <span class="scroll-cue" aria-hidden="true">scroll ↓</span>
+      </div>
+
+      <div class="hero-dots" role="tablist" aria-label="Highlights">
+        <button aria-selected="true" data-go="0" aria-label="Highlight 1"></button>
+        <button aria-selected="false" data-go="1" aria-label="Highlight 2"></button>
+      </div>
+    </section>
+
+    <!-- ============ RESERVE ============ -->
+    <section class="section intro" id="reservar-intro">
+      <div class="intro-inner">
+        <h2 class="reveal">Reserve your table<br />for the best brunch on the coast</h2>
+        <p class="lead reveal">
+          Signature drinks and original food facing the sea. Breakfast
+          through brunch, and at night a latasian menu with a craft
+          cocktail bar — on the Itaguá waterfront, in Ubatuba.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="https://wa.me/5512991828250" class="btn btn-solid" target="_blank" rel="noreferrer">Reserve on WhatsApp</a>
+        </div>
+
+        <div class="feature-row reveal">
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">☀</span>
+            <h3>Brunch every day</h3>
+            <p>Cosmopolitan, with local influence.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🍸</span>
+            <h3>Signature cocktails</h3>
+            <p>Craft cocktail bar at night, facing the sea.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🌊</span>
+            <h3>Waterfront view</h3>
+            <p>The most striking view in Ubatuba, guests say.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="split-section" id="sobre">
+      <figure class="split-media reveal">
+        <img src="../assets/img/sobre-salao.jpg" alt="Monoquilha's entrance, with the sign framed by climbing vines" loading="lazy" />
+      </figure>
+      <div class="split-copy reveal">
+        <p class="eyebrow">The concept</p>
+        <h2>From breakfast<br />to the late-night bar</h2>
+        <p>
+          monoquilha was born from a cosmopolitan brunch with local
+          influence: regional suppliers and produce meet the best of
+          original cuisine, right across from the Ubatuba waterfront.
+        </p>
+        <p>
+          By day, the house opens early for breakfast and brunch. By
+          night, it turns into a latasian — Latin-Asian — menu served
+          alongside a craft cocktail bar, in a cozy atmosphere with good
+          music.
+        </p>
+        <a href="#menu" class="btn btn-line">See the menu</a>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section menu" id="menu">
+      <div class="section-head reveal">
+        <p class="eyebrow">The menu</p>
+        <h2>Menu offers</h2>
+        <p class="sub">A sample of what guests talk about most — the full, seasonal menu is always on Instagram and iFood.</p>
+      </div>
+
+      <div class="menu-tabs reveal" role="tablist" aria-label="Menu categories">
+        <button role="tab" aria-selected="true" data-tab="am">Morning &amp; Brunch</button>
+        <button role="tab" aria-selected="false" data-tab="pm">Bar &amp; Night</button>
+        <button role="tab" aria-selected="false" data-tab="drinks">Cocktails</button>
+      </div>
+
+      <div class="menu-panels reveal">
+        <div class="menu-panel is-active" data-panel="am">
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Cuscuz Nordestino</h3><span class="dots"></span><span class="tag">classic</span></div>
+              <p>Brazilian northeastern-style couscous with egg and cheese — a house classic at brunch.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Cured Fish Salad</h3><span class="dots"></span><span class="tag">highlight</span></div>
+              <p>House-cured fish — a guest favorite.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>House Burrito</h3><span class="dots"></span></div>
+              <p>Pulled pork or tofu, with rustic fries and salsa.</p>
+            </article>
+          </div>
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Banana Pancake</h3><span class="dots"></span></div>
+              <p>Maple syrup and mixed berries.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Chocolate Pancake</h3><span class="dots"></span></div>
+              <p>For those who like brunch a little sweeter.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Toasts</h3><span class="dots"></span></div>
+              <p>Options that carry through from brunch to the night bar.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="pm">
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Bao</h3><span class="dots"></span><span class="tag">latasian</span></div>
+              <p>Steamed bun, latasian-style — Latin-Asian.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Dumplings</h3><span class="dots"></span></div>
+              <p>Vegetarian version, one of the most-ordered starters.</p>
+            </article>
+          </div>
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Vegetarian Ramen</h3><span class="dots"></span><span class="tag">highlight</span></div>
+              <p>A full dish from the night menu.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Pork Burrito</h3><span class="dots"></span></div>
+              <p>Pulled pork, rustic fries and house salsa.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="drinks">
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Signature cocktails</h3><span class="dots"></span></div>
+              <p>House originals, for those who want to try something new.</p>
+            </article>
+            <article class="menu-item">
+              <div class="mi-head"><h3>Classics done right</h3><span class="dots"></span></div>
+              <p>Old favorites, done just right.</p>
+            </article>
+          </div>
+          <div class="menu-col">
+            <article class="menu-item">
+              <div class="mi-head"><h3>Wines &amp; sparkling</h3><span class="dots"></span></div>
+              <p>A selection to go with the sunset on the waterfront.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-cta reveal">
+        <a href="https://www.instagram.com/monoquilha_/" class="btn btn-line" target="_blank" rel="noreferrer">Full menu on Instagram</a>
+      </div>
+    </section>
+
+    <!-- ============ RESERVATION PANEL ============ -->
+    <section class="reserve-panel" id="reserva">
+      <div class="reserve-inner">
+        <p class="eyebrow">Reservations</p>
+        <h2>Every day, from breakfast to the late-night bar</h2>
+        <p class="sub">Confirm the day and time straight on WhatsApp — we reply fast.</p>
+        <a href="https://wa.me/5512991828250?text=Hi!%20I'd%20like%20to%20book%20a%20table%20at%20monoquilha." class="btn btn-solid" target="_blank" rel="noreferrer">Message us on WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- ============ RECOMMENDED ============ -->
+    <section class="section recomendado">
+      <div class="section-head reveal">
+        <p class="eyebrow">Recommended today</p>
+        <h2>What guests order most</h2>
+      </div>
+      <div class="rec-grid reveal">
+        <article class="rec-card">
+          <div class="rec-media">
+            <img src="../assets/img/rec-bao.jpg" alt="Bao with pulled meat, pickled red onion and scallions" loading="lazy" />
+          </div>
+          <h3>Bao</h3>
+          <p>Amazing, according to those who've tried it — from the night menu.</p>
+        </article>
+        <article class="rec-card">
+          <div class="rec-media">
+            <img src="../assets/img/rec-guaca.jpg" alt="Toast with guacamole, cherry tomato and arugula" loading="lazy" />
+          </div>
+          <h3>Guacamole</h3>
+          <p>Toast with fresh guacamole — a brunch classic.</p>
+        </article>
+        <article class="rec-card">
+          <div class="rec-media">
+            <img src="../assets/img/rec-ramen.jpg" alt="Ramen with egg, mushrooms and scallions" loading="lazy" />
+          </div>
+          <h3>Vegetarian Ramen</h3>
+          <p>A full dish, "divine" according to guests.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ HIGHLIGHTS ============ -->
+    <section class="feature-strip">
+      <div class="fs-item reveal">
+        <span class="feature-icon" aria-hidden="true">🌿</span>
+        <h3>Local produce</h3>
+        <p>Regional suppliers, a focus on the territory.</p>
+      </div>
+      <div class="fs-item reveal">
+        <span class="feature-icon" aria-hidden="true">🥟</span>
+        <h3>Latasian menu</h3>
+        <p>Latin-Asian, served at the bar by night.</p>
+      </div>
+      <div class="fs-item reveal">
+        <span class="feature-icon" aria-hidden="true">🍹</span>
+        <h3>Craft cocktails</h3>
+        <p>House signature drinks.</p>
+      </div>
+      <div class="fs-item reveal">
+        <span class="feature-icon" aria-hidden="true">🎶</span>
+        <h3>Good music</h3>
+        <p>Cozy atmosphere, waterfront vibe.</p>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="testi-section" id="depoimentos">
+      <div class="section-head reveal">
+        <p class="eyebrow">Who's been</p>
+        <h2>4.9 out of 5 on Tripadvisor</h2>
+      </div>
+      <div class="testi-slider reveal" id="testiSlider" data-dot-label="Review">
+        <div class="testi-track">
+          <blockquote class="t-item is-active">
+            <p>"A really interesting spot, unlike anything else in Ubatuba. You can tell whoever's in the kitchen knows what they're doing."</p>
+            <cite>Vinicius B. · Jan 2026</cite>
+          </blockquote>
+          <blockquote class="t-item">
+            <p>"Lovely atmosphere, great music and beautiful decor. I had a vegetarian ramen that was divine."</p>
+            <cite>Karina · Sep 2025</cite>
+          </blockquote>
+          <blockquote class="t-item">
+            <p>"Charming, welcoming spot. We were served naturally and the food was excellent."</p>
+            <cite>Renato F. · Dec 2023</cite>
+          </blockquote>
+          <blockquote class="t-item">
+            <p>"Beautiful brunch, with the most striking view on the Ubatuba waterfront. Amazing service."</p>
+            <cite>Duane F. · Dec 2023</cite>
+          </blockquote>
+          <blockquote class="t-item">
+            <p>"The place is beautiful, right on the water. Great drinks, tasty portions and good service."</p>
+            <cite>Aruana A. · Nov 2023</cite>
+          </blockquote>
+          <blockquote class="t-item">
+            <p>"Beautiful place, perfect food. The bao is amazing, tofu burrito, toasts… and great drinks at night."</p>
+            <cite>Adriana L. · Dec 2023</cite>
+          </blockquote>
+        </div>
+        <div class="testi-dots" role="tablist" aria-label="Reviews"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / LOCATION ============ -->
+    <section class="contact-section" id="contato">
+      <div class="contact-grid">
+        <div class="contact-col reveal">
+          <p class="eyebrow">Contact</p>
+          <h3>Get in touch</h3>
+          <p>Av. Escultor e Pintor da Motta, 544<br />Itaguá Waterfront, Ubatuba, SP · 11689-544, Brazil</p>
+          <p><a href="https://wa.me/5512991828250" target="_blank" rel="noreferrer">+55 (12) 99182-8250</a></p>
+          <p><a href="tel:+551291986634">+55 12 99198-6634</a></p>
+          <p><a href="mailto:monoquilha.ubatuba@gmail.com">monoquilha.ubatuba@gmail.com</a></p>
+        </div>
+        <div class="contact-col reveal">
+          <p class="eyebrow">Hours</p>
+          <h3>Opening hours</h3>
+          <ul class="hours">
+            <li><span>Breakfast</span><span>Brunch</span></li>
+            <li><span>Lunch &amp; Dinner</span><span>Late-night bar</span></li>
+          </ul>
+          <p class="fine-print">Aggregated hours from Tripadvisor (8am–1am) — please confirm the daily schedule on Instagram before you go.</p>
+        </div>
+        <div class="contact-col reveal">
+          <p class="eyebrow">Location</p>
+          <h3>Itaguá Waterfront</h3>
+          <figure class="map-media">
+            <iframe
+              title="Map — Monoquilha Bar n' Brunch, Ubatuba"
+              src="https://www.google.com/maps?q=Monoquilha+Bar+n+Brunch,+Avenida+Escultor+e+Pintor+da+Motta,+544,+Ubatuba,+SP&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </figure>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Monoquilha+Bar+n+Brunch+Ubatuba"
+            class="btn btn-line"
+            target="_blank"
+            rel="noreferrer"
+          >Get directions →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="insta-strip">
+      <p class="eyebrow">@monoquilha_ · 12.3k followers</p>
+      <div class="insta-grid">
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-brunch.jpg" alt="Eggs benedict with bacon, brunch style" loading="lazy" />
+        </a>
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-drinks.jpg" alt="Sparkling wine, espresso martini and a grenadine cocktail" loading="lazy" />
+        </a>
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-orla.jpg" alt="Sea view from the entrance of monoquilha" loading="lazy" />
+        </a>
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-bar.jpg" alt="Bar shelves with bottles and glasses, view to the outdoor area" loading="lazy" />
+        </a>
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-pratos.jpg" alt="Brunch spread: toast, eggs benedict and burritos" loading="lazy" />
+        </a>
+        <a class="insta-item" href="https://www.instagram.com/monoquilha_/" target="_blank" rel="noreferrer">
+          <img src="../assets/img/insta-salao.jpg" alt="Dining room with wooden tables and a bamboo ceiling" loading="lazy" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Monoquilha Bar n' Brunch · Ubatuba, SP, Brazil</span>
+      <span>Av. Escultor e Pintor da Motta, 544</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5512991828250" class="whatsapp-fab" target="_blank" rel="noreferrer" aria-label="Message us on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5C4.6 20.2 4 18.1 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.2-.2.3-.4.5-.6.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>

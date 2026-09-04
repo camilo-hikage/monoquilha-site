@@ -219,6 +219,17 @@ h1, h2, h3 {
 .nav .btn {
   color: var(--cream);
 }
+.lang-switch {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  color: var(--cream-dim) !important;
+}
+.lang-switch:hover {
+  border-color: var(--coral);
+  color: var(--coral) !important;
+}
 
 .brand {
   justify-self: center;
