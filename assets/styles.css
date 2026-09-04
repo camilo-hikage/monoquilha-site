@@ -183,6 +183,7 @@ h1, h2, h3 {
   box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.5);
 }
 .header-inner {
+  position: relative;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0.32rem 2rem;
@@ -221,31 +222,27 @@ h1, h2, h3 {
 
 .brand {
   justify-self: center;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: center;
+  width: 140px;
+  height: 1px;
+  --logo-size: 117px;
+  --logo-left: 50%;
 }
 .brand-logo {
-  width: 117px;
-  height: 117px;
-  margin-top: -38px;
+  position: absolute;
+  left: var(--logo-left);
+  top: 100%;
+  transform: translate(-50%, -50%);
+  width: var(--logo-size);
+  height: var(--logo-size);
   border-radius: 999px;
-  /* efeito moeda: leve giro em profundidade, virada pra direita */
-  transform: perspective(700px) rotateY(-26deg) rotate(-3deg);
-  transform-style: preserve-3d;
-  box-shadow:
-    -6px 10px 18px -8px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(227, 162, 59, 0.25);
-  transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease, margin-top 0.3s ease;
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, left 0.3s ease;
 }
 .brand:hover .brand-logo {
-  transform: perspective(700px) rotateY(-34deg) rotate(-5deg);
+  transform: translate(-50%, -50%) rotate(-6deg);
 }
-.site-header.scrolled .brand-logo {
-  width: 87px;
-  height: 87px;
-  margin-top: -26px;
+.site-header.scrolled .brand {
+  --logo-size: 87px;
 }
 
 .nav-toggle {
@@ -867,16 +864,12 @@ h1, h2, h3 {
   }
   .brand {
     justify-self: start;
+    --logo-size: 78px;
+    --logo-left: 71px;
   }
-  .brand-logo {
-    width: 78px;
-    height: 78px;
-    margin-top: -14px;
-  }
-  .site-header.scrolled .brand-logo {
-    width: 62px;
-    height: 62px;
-    margin-top: -10px;
+  .site-header.scrolled .brand {
+    --logo-size: 62px;
+    --logo-left: 63px;
   }
   .nav-toggle {
     display: flex;
