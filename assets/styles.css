@@ -147,7 +147,15 @@ h1, h2, h3 {
 }
 .topbar-social {
   display: flex;
-  gap: 1.2rem;
+  align-items: center;
+  gap: 1rem;
+}
+.topbar-social a {
+  display: flex;
+}
+.topbar-social svg {
+  width: 15px;
+  height: 15px;
 }
 .topbar-cta {
   color: var(--coral) !important;
